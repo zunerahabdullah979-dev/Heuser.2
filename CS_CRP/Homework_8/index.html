@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>Luna — The Creator of Candy Kingdom</title>
+  <link rel="stylesheet" href="assets/css/global.css"/>
+  <link rel="stylesheet" href="assets/css/welcome.css"/>
+  <link rel="stylesheet" href="assets/css/kingdom.css"/>
+  <link rel="stylesheet" href="assets/css/locations.css"/>
+</head>
+<body>
+
+  <!-- Screen 1: Welcome Page -->
+  <section class="app-screen active" id="screen-welcome">
+    <div class="welcome-page">
+
+  <!-- Background -->
+  <div class="welcome-bg"></div>
+  <div class="glitter-overlay"></div>
+
+  <!-- Candy Rain -->
+  <div class="candy-particles" id="candyRain"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition">
+    <div class="transition-content">âœ¨<br/><span style="font-size:1rem;font-family:'Quicksand',sans-serif;">Entering the Candy Kingdomâ€¦</span></div>
+  </div>
+
+  <!-- Welcome Content -->
+  <div class="welcome-content" style="z-index:20;">
+
+    <!-- Fairy / Character -->
+    <div class="welcome-fairy" style="margin-bottom:0;">
+      <img src="assets/images/fairy.jpg" alt="Truffle Twinkle â€” Fairy Guide" class="fairy-welcome-img" id="fairyWelcome"/>
+      <div class="speech-bubble visible" id="welcomeBubble" style="position:relative;bottom:auto;left:auto;margin-top:14px;opacity:1;transform:none;">
+        âœ¨ Welcome, dear visitor! I'm Truffle Twinkle, your magical guide!
+      </div>
+    </div>
+
+    <div class="crown-icon">ðŸ‘‘</div>
+
+    <h1 class="welcome-title shimmer-text">Luna</h1>
+    <p class="welcome-subtitle">âœ¦ The Creator of Candy Kingdom âœ¦</p>
+
+    <div class="welcome-dots">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="enter-btn-wrap">
+      <button class="btn-magic btn-primary enter-btn" id="enterBtn" onclick="enterKingdom(this)">
+        ðŸ­ Enter Candy Kingdom
+      </button>
+    </div>
+  </div>
+
+  <!-- Discreet Bottom Concept Bar (Teacher Requirement) -->
+  <footer style="position:relative;z-index:20;margin:30px auto 20px;text-align:center;max-width:650px;padding:0 20px;">
+    <p style="font-size:0.85rem;color:#FFF;text-shadow:0 1px 4px rgba(70,20,50,0.5);line-height:1.6;font-style:italic;">
+      âœ¦ An unconventional portfolio: instead of traditional navigation bars, you explore Luna's personality and work through interactive fantasy locations in an enchanted Candy Kingdom.
+    </p>
+    <p style="font-size:0.8rem;color:rgba(255,255,255,0.9);margin-top:6px;text-shadow:0 1px 4px rgba(70,20,50,0.5);">
+      Homework 8 Portfolio Â· A Level Computing Â· <a href="https://zunerahabdullah979-dev.github.io/Heuser/CS_CRP/Homework_7/" target="_blank" rel="noopener" style="color:#FFF;font-weight:700;text-decoration:underline;">Homework 7 Link</a>
+    </p>
+  </footer>
+
+</div>
+
+<!-- Audio Control -->
+<div id="audioContainer"></div>
+  </section>
+
+  <!-- Screen 2: Kingdom Map -->
+  <section class="app-screen" id="screen-kingdom">
+    <!-- Background -->
+<div class="kingdom-page">
+  <div class="kingdom-bg" id="kingdomBg"></div>
+
+  <!-- Candy rain -->
+  <div class="candy-particles" id="candyRain"></div>
+
+  <!-- Header -->
+  <div class="kingdom-header" style="padding-bottom:10px;">
+    <h1 class="shimmer-text">âœ¨ Candy Kingdom âœ¨</h1>
+    <p>âœ¦ Click any magical building to enter directly âœ¦</p>
+  </div>
+
+  <!-- Static Kingdom Guide Banner (Fixed, Suitable Location) -->
+  <div class="kingdom-guide-banner glass-panel" id="kingdomBanner">
+    <div class="guide-icon" id="guideIcon">ðŸ‘‘</div>
+    <div class="guide-text">
+      <h3 id="kingdomGuideTitle">Welcome to Candy Kingdom!</h3>
+      <p id="kingdomGuideDesc">Tap any location below to enter its world directly. Fairy Guide is in the corner to assist you!</p>
+    </div>
+  </div>
+
+  <!-- Locations Grid -->
+  <div class="locations-container" id="locationsGrid">
+
+    <!-- 1. My Candy Garden -->
+    <div class="loc-card" id="loc-garden" 
+         onclick="directEnter(this, 'garden.html')"
+         onmouseenter="previewLocation('garden.html', 'ðŸŒ¸ My Candy Garden â€” Click to explore Luna\'s personality & story!')">
+      <div class="loc-bg scene-garden">
+        <div class="loc-scene-emoji">
+          <div class="scene-row">ðŸŒ¸ðŸŒºðŸŒ¸</div>
+          <div class="scene-row large">ðŸ¡</div>
+          <div class="scene-row">ðŸ­ðŸŒ¿ðŸ­</div>
+          <div class="scene-row small">ðŸŒ¼ðŸŒ¼ðŸŒ¼</div>
+        </div>
+      </div>
+      <div class="loc-shine"></div>
+      <div class="loc-enter-hint">âœ¦ Enter</div>
+      <div class="loc-info">
+        <span class="loc-icon">ðŸŒ¸</span>
+        <div class="loc-name">My Candy Garden</div>
+        <div class="loc-tagline">About Me</div>
+      </div>
+    </div>
+
+    <!-- 2. Chocolate Factory -->
+    <div class="loc-card" id="loc-factory" 
+         onclick="directEnter(this, 'factory.html')"
+         onmouseenter="previewLocation('factory.html', 'ðŸ« The Chocolate Factory â€” Click to see the Virtual Pet project!')">
+      <div class="loc-bg scene-factory">
+        <div class="loc-scene-emoji">
+          <div class="scene-row">âš™ï¸ðŸ”§âš™ï¸</div>
+          <div class="scene-row large">ðŸ­</div>
+          <div class="scene-row">ðŸ«ðŸ®ðŸ«</div>
+          <div class="scene-row small">ðŸŒŠðŸŒŠðŸŒŠ</div>
+        </div>
+      </div>
+      <div class="loc-shine"></div>
+      <div class="loc-enter-hint">âœ¦ Enter</div>
+      <div class="loc-info">
+        <span class="loc-icon">ðŸ«</span>
+        <div class="loc-name">Chocolate Factory</div>
+        <div class="loc-tagline">My Projects</div>
+      </div>
+    </div>
+
+    <!-- 3. Candy Castle -->
+    <div class="loc-card" id="loc-castle" 
+         onclick="directEnter(this, 'castle.html')"
+         onmouseenter="previewLocation('castle.html', 'ðŸ° The Candy Castle â€” Click to view Luna\'s achievements & flip certificates!')">
+      <div class="loc-bg scene-castle">
+        <div class="loc-scene-emoji">
+          <div class="scene-row">ðŸŒŸâ­ðŸŒŸ</div>
+          <div class="scene-row large">ðŸ°</div>
+          <div class="scene-row">ðŸ’ŽðŸ”®ðŸ’Ž</div>
+          <div class="scene-row small">âœ¨âœ¨âœ¨</div>
+        </div>
+      </div>
+      <div class="loc-shine"></div>
+      <div class="loc-enter-hint">âœ¦ Enter</div>
+      <div class="loc-info">
+        <span class="loc-icon">ðŸ°</span>
+        <div class="loc-name">Candy Castle</div>
+        <div class="loc-tagline">Achievements</div>
+      </div>
+    </div>
+
+    <!-- 4. Cupcake CafÃ© -->
+    <div class="loc-card" id="loc-cafe" 
+         onclick="directEnter(this, 'cafe.html')"
+         onmouseenter="previewLocation('cafe.html', 'ðŸ§ Cupcake CafÃ© â€” Click to see hobbies, favourite subjects & passions!')">
+      <div class="loc-bg scene-cafe">
+        <div class="loc-scene-emoji">
+          <div class="scene-row">ðŸŒ»â˜•ðŸŒ»</div>
+          <div class="scene-row large">ðŸª</div>
+          <div class="scene-row">ðŸ§ðŸ°ðŸ§</div>
+          <div class="scene-row small">ðŸŒ¸ðŸŒ¸ðŸŒ¸</div>
+        </div>
+      </div>
+      <div class="loc-shine"></div>
+      <div class="loc-enter-hint">âœ¦ Enter</div>
+      <div class="loc-info">
+        <span class="loc-icon">ðŸ§</span>
+        <div class="loc-name">Cupcake CafÃ©</div>
+        <div class="loc-tagline">Interests & Hobbies</div>
+      </div>
+    </div>
+
+    <!-- 5. Donut Mountain -->
+    <div class="loc-card" id="loc-mountain" 
+         onclick="directEnter(this, 'mountain.html')"
+         onmouseenter="previewLocation('mountain.html', 'ðŸ© Donut Mountain â€” Click to view Luna\'s big robotics & AI dreams!')">
+      <div class="loc-bg scene-mountain">
+        <div class="loc-scene-emoji">
+          <div class="scene-row">ðŸŒ™â­ðŸŒ™</div>
+          <div class="scene-row large">â›°ï¸</div>
+          <div class="scene-row">ðŸ©ðŸŒˆðŸ©</div>
+          <div class="scene-row small">ðŸŒŸðŸ’«ðŸŒŸ</div>
+        </div>
+      </div>
+      <div class="loc-shine"></div>
+      <div class="loc-enter-hint">âœ¦ Enter</div>
+      <div class="loc-info">
+        <span class="loc-icon">ðŸ©</span>
+        <div class="loc-name">Donut Mountain</div>
+        <div class="loc-tagline">Future Aspirations</div>
+      </div>
+    </div>
+
+  </div><!-- /locations-container -->
+
+  <!-- Zoom overlay -->
+  <div class="zoom-overlay" id="zoomOverlay"></div>
+
+</div>
+  </section>
+
+  <!-- Screen 3: Candy Garden (About Me) -->
+  <section class="app-screen garden-page" id="screen-garden">
+    <div class="location-page">
+  <div class="loc-page-bg"></div>
+  <div class="garden-overlay"></div>
+
+  <!-- Floating bg decorations -->
+  <div class="bg-decorations" id="bgDeco"></div>
+
+  <div class="loc-page-content">
+
+    <!-- Header -->
+    <div class="loc-page-header">
+      <span class="loc-page-icon">ðŸŒ¸</span>
+      <h1 class="loc-page-title">My Candy Garden</h1>
+      <p class="loc-page-subtitle">âœ¦ Where Luna's Story Grows âœ¦</p>
+    </div>
+
+    <!-- Main Info Panel -->
+    <div class="info-panel glass-panel">
+
+      <!-- Photo + Basic Info -->
+      <div class="about-layout">
+        <div class="about-photo-col">
+          <div class="photo-frame">
+            <!-- Truffle Twinkle: your personal character / photo placeholder -->
+            <img src="assets/images/truffle-twinkle.jpg" alt="Truffle Twinkle" id="profilePhoto"/>
+          </div>
+          <p class="photo-label">âœ¦ Truffle Twinkle âœ¦</p>
+          <p style="font-size:0.75rem;text-align:center;color:#8a5a9a;font-style:italic;">
+            (Replace src with your personal photo anytime)
+          </p>
+        </div>
+
+        <div>
+          <div class="name-badge">âœ¦ Identity</div>
+          <h2 style="font-family:var(--font-display);font-size:2.4rem;color:var(--deep-pink);margin:0 0 4px;">
+            Truffle Twinkle
+          </h2>
+          <p class="intro-quote" style="text-align:left;margin:0 0 16px;">"Ambitious, curious, and always building."</p>
+
+          <div class="bio-grid">
+            <div class="bio-card">
+              <div class="bio-icon">ðŸŽ“</div>
+              <div class="bio-label">Education</div>
+              <div class="bio-value">A Level Student</div>
+            </div>
+            <div class="bio-card">
+              <div class="bio-icon">ðŸŒ</div>
+              <div class="bio-label">Personality</div>
+              <div class="bio-value">Ambitious</div>
+            </div>
+            <div class="bio-card">
+              <div class="bio-icon">ðŸ’»</div>
+              <div class="bio-label">Passion</div>
+              <div class="bio-value">Technology & Design</div>
+            </div>
+            <div class="bio-card">
+              <div class="bio-icon">ðŸŒŸ</div>
+              <div class="bio-label">Dream</div>
+              <div class="bio-value">Build & Innovate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <h2>ðŸŒ¿ Hello, I'm Truffle Twinkle</h2>
+      <p>
+        Welcome to my Candy Garden â€” a little corner of my magical kingdom where I get to introduce myself.
+        I'm an A Level student with a heart full of curiosity and a mind always buzzing with new ideas.
+        I describe myself with one word: <strong>Ambitious</strong>. Not because I want to impress anyone,
+        but because I genuinely believe that building things â€” apps, websites, games, solutions â€” is one of
+        the most exciting things a person can do.
+      </p>
+      <p>
+        I'm drawn to technology not just as a subject, but as a <em>superpower</em>. The ability to design
+        something from scratch, write code that brings it to life, and then share it with the world â€” that
+        cycle never gets old for me. When I'm not coding or designing, you'll probably find me deep in a book,
+        sketching ideas, or researching something new that caught my curiosity.
+      </p>
+
+      <!-- Interests -->
+      <h3>ðŸŒº What I Love</h3>
+      <div class="tag-cloud">
+        <span class="tag">ðŸ’» Technology</span>
+        <span class="tag">ðŸŽ¨ Designing</span>
+        <span class="tag">ðŸ“š Reading</span>
+        <span class="tag">ðŸ› ï¸ Building New Things</span>
+        <span class="tag tag-blue">ðŸ”¬ Research</span>
+        <span class="tag tag-blue">âœˆï¸ Travelling</span>
+        <span class="tag tag-blue">ðŸ˜´ Sleeping</span>
+      </div>
+
+      <p style="margin-top:16px;font-style:italic;color:#6b4080;">
+        Every interest on that list feeds into who I am as a creator. Research fuels my projects,
+        travelling broadens my perspective, designing shapes how I present ideas,
+        and technology ties it all together.
+      </p>
+
+    </div><!-- /info-panel -->
+  </div><!-- /loc-page-content -->
+</div><!-- /location-page -->
+
+<!-- Floating Home Button -->
+<a href="javascript:void(0)" onclick="navigateTo('kingdom.html', this)" class="btn-magic btn-home floating-home">
+  ðŸ  Kingdom
+</a>
+  </section>
+
+  <!-- Screen 4: Chocolate Factory (Projects) -->
+  <section class="app-screen factory-page" id="screen-factory">
+    <div class="location-page">
+  <div class="loc-page-bg"></div>
+
+  <!-- Floating bg deco -->
+  <div class="bg-decorations" id="bgDeco"></div>
+
+  <div class="loc-page-content">
+
+    <!-- Header -->
+    <div class="loc-page-header">
+      <span class="loc-page-icon">ðŸ«</span>
+      <h1 class="loc-page-title" style="color:white;">Chocolate Factory</h1>
+      <p class="loc-page-subtitle">âœ¦ Where Ideas Are Crafted âœ¦</p>
+    </div>
+
+    <!-- Main Info Panel -->
+    <div class="info-panel glass-panel" style="--bg:rgba(255,240,220,0.18);">
+
+      <div class="gear-row">
+        <span class="gear-spin">âš™ï¸</span>
+        <span class="gear-spin reverse">ðŸ”§</span>
+        <span class="gear-spin">âš™ï¸</span>
+      </div>
+
+      <h2 style="color:#8B4513;">ðŸ« Luna's Creation Lab</h2>
+      <p>
+        Welcome to the Chocolate Factory â€” the beating heart of Luna's creative world. This is where
+        imagination meets code, and ideas are transformed into real, working digital experiences.
+        Every project here is crafted with curiosity, dedication, and a love for technology.
+      </p>
+
+      <!-- Featured Project -->
+      <h3 style="color:#8B4513;">â­ Featured Project</h3>
+
+      <div class="project-card">
+        <div class="project-preview">
+          <div class="pet-console-bar">
+            <span>ðŸŽ® HOMEWORK 7 ARCADE</span>
+            <span>STATUS: ACTIVE ðŸŸ¢</span>
+          </div>
+          <div class="pet-display-stage">
+            <div class="pet-avatar-hero">
+              <span>ðŸ¶</span>
+            </div>
+            <div class="pet-name-tag">âœ¨ Pip the Virtual Pet âœ¨</div>
+            <div class="pet-meters">
+              <span class="pet-meter-pill">â¤ï¸ Mood: 100%</span>
+              <span class="pet-meter-pill">ðŸ¬ Fullness: 95%</span>
+              <span class="pet-meter-pill">âš¡ Energy: High</span>
+            </div>
+            <div class="pet-actions-sim">
+              <span class="sim-btn">ðŸ¬ Feed Candy</span>
+              <span class="sim-btn">ðŸŽ¾ Play Fetch</span>
+              <span class="sim-btn">ðŸ’¤ Sleep</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Virtual Pet Simulation</h2>
+          <p style="color:#4a2c5a;line-height:1.7;">
+            An interactive virtual pet application where users can care for, feed, and play with
+            their digital companion. The pet responds to user interactions with animations and
+            changing emotions â€” bringing a little joy to every screen. Built with a combination
+            of web technologies and Python to demonstrate full-stack thinking.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Python</span>
+          </div>
+
+          <p style="font-size:0.85rem;color:#8a5a9a;margin-top:8px;">
+            âœ¦ <strong>Homework 7</strong> â€” A Level Computing Project
+          </p>
+
+          <a href="https://zunerahabdullah979-dev.github.io/Heuser/CS_CRP/Homework_7/"
+             target="_blank"
+             rel="noopener"
+             class="hw7-link"
+             onclick="if(window.audioManager)window.audioManager.playSuccess()">
+            ðŸ”— Open Live Virtual Pet Project
+          </a>
+        </div>
+      </div>
+
+      <!-- More Projects Coming -->
+      <div class="coming-soon-panel">
+        <div style="font-size:2.5rem;margin-bottom:10px;">ðŸŒŸ</div>
+        <h3 style="color:rgba(255,220,180,0.9);font-family:var(--font-display);margin-bottom:10px;">
+          More Projects Loadingâ€¦
+        </h3>
+        <p>Luna is always building new things. Future projects â€” apps, games, AI experiments
+           and creative websites â€” will appear here as the journey continues.</p>
+        <div style="margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <span class="tag tag-blue">ðŸ“± Apps</span>
+          <span class="tag">ðŸŽ® Games</span>
+          <span class="tag tag-blue">ðŸ¤– AI Projects</span>
+          <span class="tag">ðŸŒ Websites</span>
+        </div>
+      </div>
+
+      <!-- Skills used -->
+      <h3 style="color:#8B4513;">ðŸ› ï¸ Technologies in the Factory</h3>
+      <div class="tag-cloud">
+        <span class="tag tag-gold">HTML</span>
+        <span class="tag tag-gold">CSS</span>
+        <span class="tag tag-gold">JavaScript</span>
+        <span class="tag tag-gold">Python</span>
+        <span class="tag tag-blue">UI Design</span>
+        <span class="tag tag-blue">Research</span>
+      </div>
+
+    </div><!-- /info-panel -->
+  </div>
+</div>
+
+<!-- Floating Home Button -->
+<a href="javascript:void(0)" onclick="navigateTo('kingdom.html', this)" class="btn-magic btn-home floating-home">
+  ðŸ  Kingdom
+</a>
+  </section>
+
+  <!-- Screen 5: Candy Castle (Achievements) -->
+  <section class="app-screen castle-page" id="screen-castle">
+    <div class="location-page">
+  <div class="loc-page-bg"></div>
+  <div class="castle-stars" id="castleStars"></div>
+  <div class="bg-decorations" id="bgDeco"></div>
+
+  <div class="loc-page-content">
+
+    <!-- Header -->
+    <div class="loc-page-header">
+      <span class="loc-page-icon">ðŸ°</span>
+      <h1 class="loc-page-title">Candy Castle</h1>
+      <p class="loc-page-subtitle">âœ¦ Luna's Achievements & Journey âœ¦</p>
+    </div>
+
+    <!-- Main Info Panel -->
+    <div class="info-panel glass-panel">
+
+      <h2>ðŸ† My Achievement Hall</h2>
+      <p>
+        Every castle is built stone by stone â€” and every achievement is earned step by step.
+        This hall celebrates Luna's academic journey, the competitions she has participated in,
+        and the personal milestones that have shaped her into the creator she is today.
+      </p>
+
+      <!-- Tabs -->
+      <div class="achievement-tabs">
+        <button class="ach-tab active" onclick="showTab('academic',this)">ðŸŽ“ Academic Journey</button>
+        <button class="ach-tab" onclick="showTab('competitions',this)">ðŸ† Competitions</button>
+        <button class="ach-tab" onclick="showTab('personal',this)">âœ¨ Personal Growth</button>
+      </div>
+
+      <!-- Academic Section -->
+      <div class="ach-section active" id="tab-academic">
+        <h3>ðŸŽ“ Academic Journey</h3>
+        <p>Luna is currently walking one of the most rigorous academic paths â€” the A Level programme,
+           where every subject demands dedication, analytical thinking, and genuine passion.</p>
+
+        <div class="achievement-grid">
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸ“š</span>
+                <div class="ach-title">A Level Student</div>
+                <div class="ach-desc">Pursuing rigorous academic studies in Computing & Sociology</div>
+                <div class="cert-badge">ðŸŽ“ Active Scholar</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸ“š A Level Programme</div>
+                <div class="back-desc">Studying rigorous A Level subjects including Computer Science and Sociology. Developing analytical rigor, structured problem solving, and research skills.</div>
+                <div class="participation-badge">âœ¦ Ongoing Journey</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸ’»</span>
+                <div class="ach-title">Computer Science</div>
+                <div class="ach-desc">Favourite subject & core passion</div>
+                <div class="cert-frame">
+                  <div class="cert-title">A Level Computer Science</div>
+                  <div class="cert-org">Theory Â· Coding Â· Algorithm Design</div>
+                </div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸ’» Computer Science</div>
+                <div class="back-desc">Luna applies CS theory to real-world software â€” building projects like her Virtual Pet, writing clean code in HTML, CSS, JavaScript and Python, and independently researching modern tech.</div>
+                <div class="participation-badge">âœ¦ Core Strength</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸ§ </span>
+                <div class="ach-title">Sociology</div>
+                <div class="ach-desc">Understanding human behaviour & society</div>
+                <div class="cert-frame">
+                  <div class="cert-title">A Level Sociology</div>
+                  <div class="cert-org">Social Systems Â· Culture Â· Ethics</div>
+                </div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸ§  Sociology</div>
+                <div class="back-desc">Luna explores social structures, human interactions, and societal challenges â€” knowledge she actively channels toward designing human-centred technology and robotics for everyday life.</div>
+                <div class="participation-badge">âœ¦ Favourite Subject</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /achievement-grid -->
+      </div><!-- /tab-academic -->
+
+      <!-- Competitions Section -->
+      <div class="ach-section" id="tab-competitions">
+        <h3>ðŸ† Competitions & Events</h3>
+        <p>Luna has stepped outside the classroom and into arenas of challenge â€” participating in
+           diverse competitions that have built her confidence, teamwork, and determination.</p>
+        <p style="font-size:0.85rem;color:#8a5a9a;font-style:italic;">
+          âœ¦ Honest note: These cards celebrate participation and the courage to compete.
+             Every participant is a champion for showing up.
+        </p>
+
+        <div class="achievement-grid">
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸš€</span>
+                <div class="ach-title">DSS Innofest</div>
+                <div class="ach-desc">Innovation & technology student showcase</div>
+                <div class="participation-badge">âœ¦ Participant</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸš€ DSS Innofest</div>
+                <div class="back-desc">Participated in the DSS Innovation Festival â€” demonstrating creativity, exploring inventive tech solutions, and presenting ideas before peers and evaluators.</div>
+                <div class="participation-badge">âœ¦ Active Participant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸ”¤</span>
+                <div class="ach-title">Spelling Bee</div>
+                <div class="ach-desc">Vocabulary, precision & linguistics</div>
+                <div class="participation-badge">âœ¦ Participant</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸ”¤ Spelling Bee</div>
+                <div class="back-desc">Competed in a rigorous Spelling Bee competition, demonstrating composure under pressure, extensive vocabulary mastery, and quick recall.</div>
+                <div class="participation-badge">âœ¦ Active Participant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸƒ</span>
+                <div class="ach-title">Sports Activities</div>
+                <div class="ach-desc">Athletic events, stamina & collaboration</div>
+                <div class="participation-badge">âœ¦ Participant</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸƒ Sports Activities</div>
+                <div class="back-desc">Engaged enthusiastically in school sports meets and team games, learning the core tenets of perseverance, healthy competition, and team sportsmanship.</div>
+                <div class="participation-badge">âœ¦ Active Participant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸ’¡</span>
+                <div class="ach-title">Hackathon</div>
+                <div class="ach-desc">Intensive collaborative programming sprint</div>
+                <div class="participation-badge">âœ¦ Participant</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸ’¡ Hackathon</div>
+                <div class="back-desc">Joined hands-on software development marathons, designing prototypes against time limits and collaborating effectively on software problem statements.</div>
+                <div class="participation-badge">âœ¦ Active Participant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <span class="ach-icon">ðŸŽ¤</span>
+                <div class="ach-title">Debate Competitions</div>
+                <div class="ach-desc">Public speaking, rebuttal & rhetoric</div>
+                <div class="participation-badge">âœ¦ Participant</div>
+                <div class="flip-hint">âœ¨ Click to Flip Certificate</div>
+              </div>
+              <div class="flip-back">
+                <div class="back-title">ðŸŽ¤ Debate Competitions</div>
+                <div class="back-desc">Stepped up to debate contemporary motions, synthesising nuanced arguments, delivering reasoned rebuttals, and building public speaking poise.</div>
+                <div class="participation-badge">âœ¦ Active Participant</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /achievement-grid -->
+      </div><!-- /tab-competitions -->
+
+      <!-- Personal Growth Section -->
+      <div class="ach-section" id="tab-personal">
+        <h3>âœ¨ Personal Achievements</h3>
+        <p>
+          Beyond grades and trophies, Luna's most significant achievements are the ones driven purely by
+          curiosity and self-motivation. These are the milestones that define her as a creator and thinker.
+        </p>
+
+        <div class="achievement-grid">
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸ”</span>
+            <div class="ach-title">Independent Learner</div>
+            <div class="ach-desc">Consistently explores new technologies, programming languages and design tools beyond the school curriculum â€” entirely self-driven.</div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸ’»</span>
+            <div class="ach-title">Project Builder</div>
+            <div class="ach-desc">Built real, working projects including an interactive Virtual Pet application â€” combining HTML, CSS, JavaScript and Python.</div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸ¤–</span>
+            <div class="ach-title">AI Explorer</div>
+            <div class="ach-desc">Actively learning about Artificial Intelligence and its applications â€” exploring how AI can be used to solve everyday problems and improve lives.</div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸŽ¨</span>
+            <div class="ach-title">Creative Designer</div>
+            <div class="ach-desc">Developed a strong design sense through self-study and practice â€” creating aesthetically beautiful digital experiences including this portfolio.</div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸŒ±</span>
+            <div class="ach-title">Curious Mind</div>
+            <div class="ach-desc">Never stops asking questions. Research is both a hobby and a skill â€” always digging deeper into topics that spark curiosity.</div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="ach-icon">ðŸŒ</span>
+            <div class="ach-title">Web Developer</div>
+            <div class="ach-desc">Can design, build and deploy functional websites from scratch â€” from concept and design to code and live deployment on GitHub Pages.</div>
+          </div>
+
+        </div><!-- /achievement-grid -->
+      </div><!-- /tab-personal -->
+
+    </div><!-- /info-panel -->
+  </div>
+</div>
+
+<!-- Floating Home Button -->
+<a href="javascript:void(0)" onclick="navigateTo('kingdom.html', this)" class="btn-magic btn-home floating-home">
+  ðŸ  Kingdom
+</a>
+  </section>
+
+  <!-- Screen 6: Cupcake Café (Hobbies & Interests) -->
+  <section class="app-screen cafe-page" id="screen-cafe">
+    <div class="location-page">
+  <div class="loc-page-bg"></div>
+  <div class="cafe-overlay"></div>
+  <div class="bg-decorations" id="bgDeco"></div>
+
+  <div class="loc-page-content">
+
+    <!-- Header -->
+    <div class="loc-page-header">
+      <span class="loc-page-icon">ðŸ§</span>
+      <h1 class="loc-page-title">Cupcake CafÃ©</h1>
+      <p class="loc-page-subtitle">âœ¦ Luna's World of Interests & Hobbies âœ¦</p>
+    </div>
+
+    <!-- Main Info Panel -->
+    <div class="info-panel glass-panel">
+
+      <h2 style="color:#8B4513;">â˜• Welcome to the CafÃ© Menu</h2>
+      <p>
+        Pull up a chair and settle in â€” the Cupcake CafÃ© is where Luna's personality really shines.
+        Think of this space as her personal menu of passions: the hobbies she loves, the subjects
+        that excite her, and the topics she can't stop exploring.
+      </p>
+
+      <!-- Tabs -->
+      <div class="cafe-tabs">
+        <button class="cafe-tab active" onclick="showCafeTab('hobbies',this)">ðŸŽ¨ Hobbies</button>
+        <button class="cafe-tab" onclick="showCafeTab('subjects',this)">ðŸ“š Favourite Subjects</button>
+        <button class="cafe-tab" onclick="showCafeTab('learning',this)">ðŸŒ What I'm Learning</button>
+      </div>
+
+      <!-- Hobbies -->
+      <div class="cafe-section active" id="ctab-hobbies">
+        <h3 style="color:#8B4513;">ðŸŽ¨ My Hobbies</h3>
+        <p>These are the things that make Luna feel most alive â€” the activities she reaches for
+           when she wants to relax, create, or explore.</p>
+
+        <div class="hobby-grid">
+          <div class="hobby-card">
+            <span class="hobby-icon">ðŸ“š</span>
+            <div class="hobby-name">Reading</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">ðŸŽ¨</span>
+            <div class="hobby-name">Designing</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">ðŸ”¬</span>
+            <div class="hobby-name">Researching</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">âœˆï¸</span>
+            <div class="hobby-name">Travelling</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">ðŸ˜´</span>
+            <div class="hobby-name">Sleeping</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">âœï¸</span>
+            <div class="hobby-name">Writing</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">âœï¸</span>
+            <div class="hobby-name">Sketching</div>
+          </div>
+          <div class="hobby-card">
+            <span class="hobby-icon">ðŸ³</span>
+            <div class="hobby-name">Cooking</div>
+          </div>
+        </div>
+
+        <p style="margin-top:16px;font-style:italic;color:#6b4000;">
+          âœ¦ From writing stories to sketching ideas, from cooking to travelling â€” Luna's hobbies all
+          feed into her creativity and curiosity. Even sleeping counts â€” rest fuels the best ideas!
+        </p>
+      </div>
+
+      <!-- Favourite Subjects -->
+      <div class="cafe-section" id="ctab-subjects">
+        <h3 style="color:#8B4513;">ðŸ“š Favourite Subjects</h3>
+        <p>Not all subjects are created equal. These two have captured Luna's heart and shaped
+           the way she thinks about the world.</p>
+
+        <div class="subject-cards">
+          <div class="subject-card">
+            <span class="subj-icon">ðŸ’»</span>
+            <div>
+              <div class="subj-name">Computer Science</div>
+              <div style="font-size:0.78rem;color:#7a4000;margin-top:3px;">Technology Â· Code Â· Logic Â· Create</div>
+            </div>
+          </div>
+          <div class="subject-card">
+            <span class="subj-icon">ðŸ§ </span>
+            <div>
+              <div class="subj-name">Sociology</div>
+              <div style="font-size:0.78rem;color:#7a4000;margin-top:3px;">People Â· Society Â· Culture Â· Understand</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" style="margin-top:20px;">
+          <h4>ðŸ’¡ Why These Two?</h4>
+          <p style="font-size:0.9rem;color:#4a2000;line-height:1.7;margin:0;">
+            Computer Science teaches Luna <em>how to build</em> â€” the technical skills to create
+            solutions. Sociology teaches her <em>who to build for</em> â€” understanding people, their
+            needs, and how society works. Together, they make her a well-rounded creator who builds
+            technology that genuinely helps people.
+          </p>
+        </div>
+      </div>
+
+      <!-- What I'm Learning -->
+      <div class="cafe-section" id="ctab-learning">
+        <h3 style="color:#8B4513;">ðŸŒ What I Love Learning About</h3>
+        <p>Luna is a natural explorer â€” here's what she can't stop researching and discovering.</p>
+
+        <div class="interest-bar-wrap">
+          <div class="interest-label"><span>ðŸ’» Technology & Programming</span><span>â­â­â­â­â­</span></div>
+          <div class="interest-bar"><div class="interest-fill" data-width="95"></div></div>
+        </div>
+        <div class="interest-bar-wrap">
+          <div class="interest-label"><span>ðŸ¤– Artificial Intelligence</span><span>â­â­â­â­â­</span></div>
+          <div class="interest-bar"><div class="interest-fill" data-width="90"></div></div>
+        </div>
+        <div class="interest-bar-wrap">
+          <div class="interest-label"><span>ðŸ”¬ Research & Discovery</span><span>â­â­â­â­</span></div>
+          <div class="interest-bar"><div class="interest-fill" data-width="85"></div></div>
+        </div>
+        <div class="interest-bar-wrap">
+          <div class="interest-label"><span>ðŸŽ¨ Design & Creativity</span><span>â­â­â­â­</span></div>
+          <div class="interest-bar"><div class="interest-fill" data-width="82"></div></div>
+        </div>
+
+        <div class="menu-card" style="margin-top:20px;">
+          <h4>ðŸ¤– AI: Luna's Biggest Fascination</h4>
+          <p style="font-size:0.9rem;color:#4a2000;line-height:1.7;margin:0;">
+            Artificial Intelligence isn't just a subject to Luna â€” it's a vision. She sees AI as the
+            technology that will define the next generation, and she's determined to be part of building
+            it. From machine learning concepts to robotics applications, Luna's curiosity about AI
+            never sleeps.
+          </p>
+        </div>
+
+      </div>
+
+    </div><!-- /info-panel -->
+  </div>
+</div>
+
+<!-- Floating Home Button -->
+<a href="javascript:void(0)" onclick="navigateTo('kingdom.html', this)" class="btn-magic btn-home floating-home">
+  ðŸ  Kingdom
+</a>
+  </section>
+
+  <!-- Screen 7: Donut Mountain (Future Aspirations) -->
+  <section class="app-screen mountain-page" id="screen-mountain">
+    <div class="location-page">
+  <div class="loc-page-bg"></div>
+  <div class="clouds" id="clouds"></div>
+  <div class="bg-decorations" id="bgDeco"></div>
+
+  <div class="loc-page-content">
+
+    <!-- Header -->
+    <div class="loc-page-header">
+      <span class="loc-page-icon">ðŸ©</span>
+      <h1 class="loc-page-title">Donut Mountain</h1>
+      <p class="loc-page-subtitle">âœ¦ Luna's Dreams & Future Aspirations âœ¦</p>
+    </div>
+
+    <!-- Main Info Panel -->
+    <div class="info-panel glass-panel">
+
+      <h2>ðŸŒˆ Reaching for the Summit</h2>
+      <p>
+        Donut Mountain is the highest point in the Candy Kingdom â€” and fitting, because this is where
+        Luna's biggest dreams live. From the peak of this mountain, she can see the future she is
+        actively working towards: a future of technology, creativity, and meaningful impact.
+      </p>
+
+      <!-- Things I Want to Create -->
+      <h3>ðŸ› ï¸ Things I Want to Create</h3>
+      <p>Luna doesn't just dream â€” she plans. These are the creations she is determined to build.</p>
+
+      <div class="creation-grid">
+        <div class="creation-card">
+          <span class="creation-icon">ðŸ“±</span>
+          <div class="creation-name">Apps</div>
+          <div class="creation-desc">Mobile & web applications that solve real problems</div>
+        </div>
+        <div class="creation-card">
+          <span class="creation-icon">ðŸŽ®</span>
+          <div class="creation-name">Games</div>
+          <div class="creation-desc">Interactive worlds that bring joy and engagement</div>
+        </div>
+        <div class="creation-card">
+          <span class="creation-icon">ðŸŒ</span>
+          <div class="creation-name">Websites</div>
+          <div class="creation-desc">Beautiful, functional digital experiences</div>
+        </div>
+      </div>
+
+      <!-- Career Interests -->
+      <h3>ðŸš€ Career Interests</h3>
+      <div class="aspiration-timeline">
+        <div class="aspiration-item">
+          <h4>ðŸ’» Technology Industry</h4>
+          <p>Luna sees herself working at the intersection of innovation and impact â€” in a technology
+             company where she can build products that change how people live and work. Her goal is
+             to be not just a user of great technology, but a creator of it.</p>
+        </div>
+        <div class="aspiration-item">
+          <h4>ðŸ¤– Artificial Intelligence</h4>
+          <p>AI is not just a career interest for Luna â€” it's a calling. She wants to understand,
+             research, and eventually contribute to the field of AI, particularly in areas where
+             intelligent systems can be used to solve everyday problems and improve quality of life.</p>
+        </div>
+      </div>
+
+      <!-- Skills to Develop -->
+      <h3>âš¡ Skills I'm Building</h3>
+      <p>Luna has a clear roadmap of the skills she needs to develop to reach her goals.</p>
+
+      <div class="skill-pill-grid">
+        <div class="skill-pill">
+          <div class="skill-name">ðŸ’» Programming</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          <div class="skill-level">Growing steadily</div>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-name">ðŸ¤– AI & Machine Learning</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="40"></div></div>
+          <div class="skill-level">Early explorer</div>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-name">ðŸ› ï¸ Technology & Systems</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          <div class="skill-level">Building knowledge</div>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-name">ðŸ”¬ Research</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          <div class="skill-level">Natural strength</div>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-name">ðŸŽ¨ Designing</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <div class="skill-level">Developing fast</div>
+        </div>
+      </div>
+
+      <!-- Big Dream -->
+      <h3>ðŸŒŸ The Big Dream</h3>
+
+      <div class="dream-quote">
+        To build a big project involving robots for everyday life and work with good technology companies.
+      </div>
+
+      <!-- Impact Statement -->
+      <div class="impact-card">
+        <h3>ðŸŒ Luna's Vision for Impact</h3>
+        <p>
+          Imagine a world where everyday tasks â€” from home care to healthcare, from education to elderly
+          support â€” are made easier, safer and more dignified through intelligent robotics. That's the
+          world Luna wants to help build.
+        </p>
+        <p>
+          She believes that technology, when built with empathy and purpose, doesn't just solve problems â€”
+          it transforms lives. Her ambition is to design and engineer robotic systems and AI-powered tools
+          that serve real people: reducing barriers, saving time, and giving people back the freedom to
+          focus on what truly matters.
+        </p>
+        <p>
+          Luna's journey is just beginning. But with every project she builds, every subject she studies,
+          and every new technology she explores, she is climbing closer to that summit â€” where her
+          biggest dreams meet the real world, and where she gets to make a genuine difference.
+        </p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+          <span class="tag">ðŸ¤– Robotics</span>
+          <span class="tag tag-blue">ðŸ§  AI for Good</span>
+          <span class="tag">ðŸŒ Meaningful Impact</span>
+          <span class="tag tag-blue">ðŸ’¡ Innovation</span>
+        </div>
+      </div>
+
+      <!-- Bonus section note -->
+      <div style="text-align:center;margin-top:20px;padding:16px;background:rgba(255,255,255,0.3);border-radius:16px;border:1.5px dashed rgba(255,255,255,0.5);">
+        <p style="font-size:0.85rem;color:#8a5a9a;font-style:italic;margin:0;">
+          âœ¦ This section is Luna's <strong>Future Aspirations</strong> â€” a required bonus section of the
+          Candy Kingdom portfolio. Every dream starts with a step, and Luna has already taken many.
+        </p>
+      </div>
+
+    </div><!-- /info-panel -->
+  </div>
+</div>
+
+<!-- Floating Home Button -->
+<a href="javascript:void(0)" onclick="navigateTo('kingdom.html', this)" class="btn-magic btn-home floating-home">
+  ðŸ  Kingdom
+</a>
+  </section>
+
+  <!-- Audio, Fairy & Interactive Scripts -->
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/fairy.js"></script>
+  <script src="assets/js/effects.js"></script>
+  <script>
+    // Enter Kingdom from Welcome screen
+    function enterKingdom(btn) {
+      if (window.audioManager) window.audioManager.startMusic();
+      navigateTo('kingdom.html', btn);
+    }
+
+    // Direct entry from location cards
+    function directEnter(card, url) {
+      if (window.audioManager) window.audioManager.playClick();
+      navigateTo(url, card);
+    }
+
+    // Preview location in Kingdom guide banner
+    const locationData = {
+      'garden.html':  { icon:'??', title:'My Candy Garden',    desc:'Explore Luna\'s story, personality, and background as an ambitious A Level student.' },
+      'factory.html': { icon:'??', title:'Chocolate Factory',   desc:'Discover the projects Luna has crafted, including the featured Virtual Pet project.' },
+      'castle.html':  { icon:'??', title:'Candy Castle',        desc:'Celebrate Luna\'s academic journey, competitions, hackathons, and flash certificates.' },
+      'cafe.html':    { icon:'??', title:'Cupcake Café',        desc:'Browse Luna\'s personal hobbies, favourite subjects (CS & Sociology), and passions.' },
+      'mountain.html':{ icon:'??', title:'Donut Mountain',      desc:'Climb to the summit to see Luna\'s big dreams: building everyday robots & working in AI.' },
+    };
+
+    function previewLocation(url, fairyMsg) {
+      const data = locationData[url];
+      if (data) {
+        const iconEl = document.getElementById('guideIcon');
+        const titleEl = document.getElementById('kingdomGuideTitle');
+        const descEl = document.getElementById('kingdomGuideDesc');
+        if (iconEl) iconEl.textContent = data.icon;
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+      }
+      if (window.fairy) window.fairy.say(fairyMsg, 4000);
+    }
+
+    // Castle tab switcher
+    function showTab(id, btn) {
+      document.querySelectorAll('#screen-castle .ach-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('#screen-castle .ach-tab').forEach(b => b.classList.remove('active'));
+      const target = document.getElementById('tab-' + id);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+      if (window.audioManager) window.audioManager.playClick();
+    }
+
+    // Café tab switcher
+    function showCafeTab(id, btn) {
+      document.querySelectorAll('#screen-cafe .cafe-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('#screen-cafe .cafe-tab').forEach(b => b.classList.remove('active'));
+      const target = document.getElementById('ctab-' + id);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+      if (window.audioManager) window.audioManager.playClick();
+
+      if (id === 'learning') {
+        setTimeout(() => {
+          document.querySelectorAll('#screen-cafe .interest-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+        }, 150);
+      }
+    }
+
+    // Initializer
+    window.addEventListener('DOMContentLoaded', () => {
+      // Candy rain
+      initCandyRain(document.getElementById('candyRain'));
+      initCandyRain(document.getElementById('candyRainWelcome'));
+
+      // Cycle welcome speech bubbles
+      const bubbleMsgs = [
+        '? Welcome, dear visitor! I\'m your Fairy Guide!',
+        '?? Truffle Twinkle & Luna welcome you to the Candy Kingdom!',
+        '?? Tap "Enter" to begin your magical journey!',
+        '?? Explore five enchanted locations inside!',
+      ];
+      let bIdx = 0;
+      setInterval(() => {
+        bIdx = (bIdx + 1) % bubbleMsgs.length;
+        const b = document.getElementById('welcomeBubble');
+        if (b) {
+          b.style.opacity = '0';
+          setTimeout(() => {
+            b.textContent = bubbleMsgs[bIdx];
+            b.style.opacity = '1';
+          }, 300);
+        }
+      }, 4500);
+
+      // Dedicated corner Fairy Guide
+      window.fairy = new FairyGuide({
+        messages: [
+          '? Welcome to Candy Kingdom! Tap any building to explore!',
+          '?? Visit Candy Garden to learn about Luna & Truffle Twinkle!',
+          '?? The Chocolate Factory holds the live Virtual Pet project!',
+          '?? The Castle is filled with flip-card certificates!',
+          '?? Stop by Cupcake Café for hobbies & subjects!',
+          '?? Climb Donut Mountain to see Luna\'s big AI dream!',
+        ],
+        autoRotate: true,
+        rotateInterval: 6000,
+      });
+    });
+  </script>
+</body>
+</html>
